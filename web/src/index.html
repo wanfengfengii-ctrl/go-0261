@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LeafWash 联检控制台</title>
+  <style>
+    :root { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+    body { margin: 0; background: #0f1a14; color: #d8f3e3; }
+    header { padding: 16px 24px; border-bottom: 1px solid #1f3a2b; }
+    main { padding: 24px; max-width: 960px; margin: 0 auto; }
+    .card { background: #14241b; border: 1px solid #23432f; border-radius: 8px; padding: 16px; margin-bottom: 16px; }
+    .muted { color: #7fa68f; }
+    code { color: #9fe6bd; }
+    .state { display: inline-block; padding: 2px 10px; border-radius: 999px; background: #1d3a28; }
+    label { display: block; margin: 8px 0 2px; color: #7fa68f; }
+    input { background:#0f1a14;color:#d8f3e3;border:1px solid #23432f;padding:4px 8px;border-radius:4px;width:100%;box-sizing:border-box; }
+    button { background:#23432f;color:#d8f3e3;border:0;padding:6px 14px;border-radius:4px;cursor:pointer;margin-top:8px; }
+    button:hover { background:#2f5340; }
+    pre { overflow:auto;font-size:12px;background:#0b1811;padding:10px;border-radius:6px; }
+  </style>
+</head>
+<body>
+  <header><h1>LeafWash 鲜切叶菜清洗消毒转封装前联检闭环</h1></header>
+  <main>
+    <div class="card">
+      <h2>后端状态 <span id="backend-status" class="state">…</span></h2>
+      <p class="muted" id="backend-detail">正在探测 /healthz …</p>
+    </div>
+
+    <div class="card">
+      <h2>创建联检任务</h2>
+      <label>任务编号</label><input id="lock-task-id" value="TASK-0001" />
+      <label>基地批次</label><input id="lock-base-lot" value="BL-2026-001" />
+      <label>采收筐封签</label><input id="lock-seal" value="SEAL-001" />
+      <label>清洗槽</label><input id="lock-tank" value="TANK-A" />
+      <label>消毒液配方</label><input id="lock-formula" value="F-100" />
+      <button id="do-lock">锁定任务</button>
+      <pre id="lock-result">（未锁定）</pre>
+    </div>
+
+    <div class="card">
+      <h2>联检任务 <input id="task-id" value="TASK-0001" style="width:auto;" />
+        <button id="load-task" style="margin-top:0;">加载</button></h2>
+      <pre id="task-detail" style="font-size:13px;">（未加载）</pre>
+    </div>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
