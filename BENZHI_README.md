@@ -1,3 +1,4 @@
+基于 Go 实现的鲜切叶菜转封装联检 Web 项目，一款后端服务，管理消毒采集、洁净度检测、微生物核验与封装裁决。
 # leafwash-packaging-release-gate
 
 本 Git 项目来自模型完成任务后的 workspace，不包含嵌套 .git 记录或本地构建产物。
