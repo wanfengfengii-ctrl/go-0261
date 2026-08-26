@@ -1,0 +1,10 @@
+{
+  "name": "leafwash-web",
+  "version": "1.0.0",
+  "private": true,
+  "description": "LeafWash 联检控制台前端",
+  "scripts": {
+    "build": "node build.mjs",
+    "serve": "node build.mjs && echo 'built assets in webembed/dist'"
+  }
+}
